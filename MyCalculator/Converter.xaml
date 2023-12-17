@@ -1,0 +1,57 @@
+﻿<Window x:Class="MyCalculator.Converter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCalculator"
+        mc:Ignorable="d"
+        Title="Converter" Height="550" Width="400" Background="black" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="buttonMenu" Content="Menu"  HorizontalAlignment="Left" Margin="-5,0,0,0" 
+                VerticalAlignment="Top" Width="100" Height="30" Click="buttonMenu_Click"  Background="White"  Foreground="DarkOrange" 
+                FontSize="25" FontWeight="Regular" FontFamily="Arial" RenderTransformOrigin="0.528,0.501"/>
+        <TextBox Name="decimalBox" Grid.Row="1" Grid.ColumnSpan="2" Text="" Height="70" Width="350" Background="DarkOrange" Foreground="black"
+                 FontFamily="Georgia" FontSize="55" TextAlignment="Center" Margin="25,41,25,10"/>
+        <Button Content="= Convert" FontFamily="Georgia" FontSize="23" Background="LightGreen" Foreground="Black" Width="118" Height="45" Padding="0"
+                RenderTransformOrigin="0.5,0.734" Margin="25,121,57,5" Grid.Row="1"  Grid.Column="0" Click="Button_Click" Grid.RowSpan="2"/>
+        <Button Content="|| Swap" FontFamily="Georgia" FontSize="25" Background="LightGreen" Foreground="Black" Width="115" Height="45" Padding="0"
+                RenderTransformOrigin="0.5,0.734" Margin="60,121,25,5" Grid.Row="1" Click="Button_Click_1" Grid.RowSpan="2" Grid.Column="1"/>
+        <TextBlock Name="binaryBox" Text="" Height="70" Width="350" Background="DarkOrange" Foreground="black" FontFamily="Georgia" FontSize="55"
+                 TextAlignment="Center" Margin="25,31,25,20" Grid.ColumnSpan="2" Grid.Row="3"/>
+        <TextBlock Name="askBlock" FontSize="25" FontWeight="Light" FontFamily="Georgia" Foreground="White"
+                   TextAlignment="Left" Margin="25,10,25,80" Grid.ColumnSpan="2" Grid.Row="1" />
+        <TextBlock Name="toldBlock" Text="Binary number" FontSize="25" FontWeight="Light" FontFamily="Georgia" Foreground="White"
+                   TextAlignment="Left" Margin="25,50,25,90" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="2"/>
+        <ComboBox x:Name="input_Type" Width="150" Height="30" Margin="25,81,25,10" SelectionChanged="fromCombo_SelectionChanged">
+            <ComboBoxItem Content="Binary"/>
+            <ComboBoxItem Content="Decimal"/>
+            <ComboBoxItem Content="Octal"/>
+            <ComboBoxItem Content="Hexadecimal"/>
+        </ComboBox>
+        <ComboBox Name="output_Type" Width="170" Height="30" Margin="15,81,15,10" Grid.Column="1" SelectionChanged="toCombo_SelectionChanged">
+            <ComboBoxItem Content="Binary"/>
+            <ComboBoxItem Content="Decimal"/>
+            <ComboBoxItem Content="Octal"/>
+            <ComboBoxItem Content="Hexadecimal"/>
+        </ComboBox>
+
+        <TextBlock Width="40" Height="20" Text="From" Foreground="White" Background="Black" Margin="25,53,135,38"/>
+        <TextBlock Width="40" Height="20" Text="To" Foreground="White" Background="Black" Margin="25,58,135,43" Grid.Column="1"/>
+
+
+
+    </Grid>
+</Window>
